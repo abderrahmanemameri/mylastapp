@@ -1,24 +1,25 @@
 package com.example.prof_silem;
 
 import android.os.Bundle;
+import android.widget.TextView;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 public class fourclass extends AppCompatActivity {
+
+    private TextView scoreText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_fourclass);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
+        setContentView(R.layout.activity_fourclass); // تأكد أن اسم الصفحة صحيح
+
+        scoreText = findViewById(R.id.scoreText); // الربط مع TextView الخاص بالنتيجة
+
+        // استلام السكور من الإنتنت
+        int score = getIntent().getIntExtra("SCORE", 0);
+
+        // عرض النتيجة
+        scoreText.setText("Congratulations!\nYour score is: " + score);
     }
 }

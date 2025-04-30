@@ -3,7 +3,9 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#328E6E">
+    android:background="#328E6E"
+    >
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -12,17 +14,17 @@
         android:padding="25dp"
         android:gravity="center_horizontal">
 
-        <!-- 🟨 السؤال -->
+
         <TextView
             android:id="@+id/questionText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Which country has won the most Africa Cup of Nations (AFCON) titles?"
+            android:text="Who won the Last Champions Ligue 2023/2024 "
+
             android:textSize="20sp"
             android:textStyle="bold"
-            android:layout_marginBottom="16dp"
+            android:layout_marginBottom="24dp"
             android:textColor="#000000" />
-
         <!-- ⏲️ المؤقت تحت السؤال وبالمنتصف -->
         <TextView
             android:id="@+id/timerTextView"
@@ -34,53 +36,53 @@
             android:textStyle="bold"
             android:layout_marginBottom="24dp" />
 
-        <!-- 🟩 خيارات الإجابة -->
         <Button
-            android:id="@+id/btn1"
+            android:id="@+id/btuun1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Algeria"
+            android:text="Chelsea"
+            android:textColor="#67AE6E"
+            android:backgroundTint="#E1EEBC"
+
+            android:layout_marginBottom="30dp" />
+
+        <Button
+            android:id="@+id/btuun2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Paris"
             android:textColor="#67AE6E"
             android:backgroundTint="#E1EEBC"
             android:layout_marginBottom="30dp" />
 
         <Button
-            android:id="@+id/btn2"
+            android:id="@+id/btuun3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Cameroon"
+            android:text="Man City"
             android:textColor="#67AE6E"
             android:backgroundTint="#E1EEBC"
             android:layout_marginBottom="30dp" />
 
         <Button
-            android:id="@+id/btn3"
+            android:id="@+id/btuun4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="South Africa"
+            android:text="Real Madrid"
             android:textColor="#67AE6E"
             android:backgroundTint="#E1EEBC"
             android:layout_marginBottom="30dp" />
 
         <Button
-            android:id="@+id/btn4"
+            android:id="@+id/btuun5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Ivory Coast"
-            android:textColor="#67AE6E"
-            android:backgroundTint="#E1EEBC"
-            android:layout_marginBottom="30dp" />
-
-        <Button
-            android:id="@+id/btn5"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Egypt"
+            android:text="Barca"
             android:textColor="#67AE6E"
             android:backgroundTint="#E1EEBC"
             android:layout_marginBottom="30dp" />
         <Button
-            android:id="@+id/Next2"
+            android:id="@+id/Next3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Next"

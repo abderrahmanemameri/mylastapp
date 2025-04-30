@@ -10,22 +10,33 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class class_four extends AppCompatActivity {
-
+public class madrid extends AppCompatActivity {
     private Button boton1, boton2, boton3, boton4, boton5;
     private Button correctButton;
     private Button nextButton;
+    private TextView timerText;
 
     private boolean answerClicked = false;
     private int score;
-    private TextView timerTextView;
     private CountDownTimer countDownTimer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_class_four);
-        nextButton = findViewById(R.id.Next2);
+        setContentView(R.layout.activity_madrid);
+
+        score = getIntent().getIntExtra("SCORE", 0);
+
+        boton1 = findViewById(R.id.btuun1);
+        boton2 = findViewById(R.id.btuun2);
+        boton3 = findViewById(R.id.btuun3);
+        boton4 = findViewById(R.id.btuun4);
+        boton5 = findViewById(R.id.btuun5);
+        correctButton = boton4;
+
+        nextButton = findViewById(R.id.Next3);
+        timerText = findViewById(R.id.timerTextView);
+        startTimer();
 
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,23 +50,12 @@ public class class_four extends AppCompatActivity {
         });
 
 
-        score = getIntent().getIntExtra("SCORE", 0);
 
-        boton1 = findViewById(R.id.btn1);
-        boton2 = findViewById(R.id.btn2);
-        boton3 = findViewById(R.id.btn3);
-        boton4 = findViewById(R.id.btn4);
-        boton5 = findViewById(R.id.btn5);
-        correctButton = boton5;
-        timerTextView = findViewById(R.id.timerTextView);
-
-        startTimer();
 
         View.OnClickListener answerClickListener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (answerClicked) return;
-
                 answerClicked = true;
                 countDownTimer.cancel();
 
@@ -87,12 +87,10 @@ public class class_four extends AppCompatActivity {
 
     private void startTimer() {
         countDownTimer = new CountDownTimer(30000, 1000) {
-            @Override
             public void onTick(long millisUntilFinished) {
-                timerTextView.setText("Time left: " +millisUntilFinished / 1000+"s"); // عرض الثواني
+                timerText.setText("Time left: " + millisUntilFinished / 1000 + "s");
             }
 
-            @Override
             public void onFinish() {
                 if (!answerClicked) {
                     answerClicked = true;
@@ -103,7 +101,7 @@ public class class_four extends AppCompatActivity {
     }
 
     private void goToNextPage() {
-        Intent intent = new Intent(class_four.this, madrid.class);
+        Intent intent = new Intent(madrid.this, balondor.class);
         intent.putExtra("SCORE", score);
         startActivity(intent);
         finish();
